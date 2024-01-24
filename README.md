@@ -1,38 +1,38 @@
-* Structura unui framework BDD:
+* The structure of a BDD framework:
 
-     1. Folder features= Feature files - Contine fisiere scrise intr-un limbaj mai natural (gherkin) care sa descrie scenariile de business
-        * Given (contextul in care se desfasoara actiunea)
-        * When (actiunea pe care o facem)
-        * Then (deznodamantul - verificarea pe care vrem sa o facem)
-     2. Folder steps = Step definition files - maparea tehnica a fisierelor de business - feature files
-     3. Folder pages = Pagini de mapare pentru elementele din browser (POM -page object model)
-        - Vom avea fisiere pentru fiecare pagina web a aplicatiei
-        - base_page file - este o clasa ce contine metode care pot fi folosite in mai multe clase, adica care sunt utile pentru toate paginile
-     4. Fisier browser - contine instrunctiuni de instalare si deschidere browser
-     5. Fisier environment - contine instantierea tuturor claselor de tip pages
+     1. Folder features= Feature files - It contains files written in a more natural language (gherkin) to describe business scenarios
+        * Given (the context in which the action takes place)
+        * When (the action we do)
+        * Then (the denouement - the check we want to do)
+     2. Folder steps = Step definition files - technical mapping of business files - feature files
+     3. Folder pages = Mapping pages for browser elements (POM -page object model)
+        - We will have files for each web page of the application
+        - base_page file - is a class that contains methods that can be used in several classes, which are useful for all pages
+     4. File browser - contains installation and browser opening instructions
+     5. File environment - contains the instantiation of all classes of type pages
 
-* Metodologii de lucru:
+* Work methodologies:
     1. Waterfall:
-        - stricta
-        - orice modificare necesara dupa inceperea proiectului va trebui implementata intr-un proiect nou
-        - se planuieste tot la inceput, apoi se dezvolta, apoi se testeaza si apoi se da in piata
-        - feedback-ul pentru produs de la clienti se primeste tarziu,la final
-        - de regula se dezvolta multa functionalitate
+        - strict
+        - any necessary modification after the start of the project will have to be implemented in a new project
+        - it is planned at the beginning, then it is developed, then it is tested and then it is put on the market
+        - product feedback from customers is received late, at the end
+        - usually a lot of functionality is developed
     2. Agile:
-        - mai putin stricta, este flexibila si organizata
-        - orice modificare aparuta in timpul implementarii, se poate modifica pe parcurs
-        - se lucreaza in sprint-uri (de regula cicluri de 2 saptamani)
-        - intr-un sprint se planifica, se dezolta, se testeaza si se da in piata (clientului)
-        - feedback-ul pentru produs se la clienti se primeste dupa fiecare sprint si se poate implementa in urmatoarele sprint-uri
-        - *(Scrum si Kanban, Scrumban)
+        - less strict, flexible and organized
+        - any change that occurs during implementation can be changed along the way
+        - work is done in sprints (usually 2-week cycles)
+        - in a sprint it is planned, developed, tested and released to the market (to the client)
+        - the feedback for the product to the customers is received after each sprint and can be implemented in the following sprints
+        - *(Scrum and Kanban, Scrumban)
     
-Functionalitatile se pot grupa in felul urmator:
-1. Epic -> componente majore (ex: pagina de cumparaturi)
-2. Story -> functionalitati independente din aceeasi componenta(adaugarea in cos ,filtre,etc.)
+Functionalities can be grouped as follows:
+1. Epic -> major components (ex: shopping page)
+2. Story -> independent functionalities from the same component (add to cart, filters, etc.)
 
 User story:
 As a customer I want to view all electronics products.
 As a customer I want to add a product to my shopping cart.
 As a {user} I want to {action} *(so that i can {reason}).
 
-Comanda: behave -f html -o behave_raport.html --tags=smoke
+Command: behave -f html -o behave_raport.html --tags=smoke
