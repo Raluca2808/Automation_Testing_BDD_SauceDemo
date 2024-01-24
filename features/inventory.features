@@ -1,4 +1,4 @@
-Feature: Check inventory funtionality
+Feature: Check inventory functionality
   Background:
     Given login: I am an user on the login page
     When login: I fill the username with value "standard_user"
